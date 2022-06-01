@@ -118,12 +118,9 @@ body {
   background: var(--tenne-tawny-dark);
 }
 
-/* SECTION */
-.meal-result {
-  margin-top: 4rem;
-  border: 3px dashed solid blue;
-}
-
+/* ========================================================================== */
+/* MEAL RELSULT LISTING */
+/* ========================================================================== */
 /* 
 RAPPEL   selecteur parent => selecteur
 
@@ -131,9 +128,15 @@ Le combinateur descendant— en général représenté par un seul espace ( )
 combine deux sélecteurs de sorte que les éléments choisis par le second sélecteur sont sélectionnés
 s'ils ont un élément ancêtre (parent etc...) qui correspond au premier sélecteur.
 */
+.meal-result {
+  margin-top: 4rem;
+  border: 3px dashed solid blue;
+}
 
+/* ========================================================================== */
 /* DEBUT DU BLOCK */
 /* NIV1 - Wrapper */
+/* ========================================================================== */
 #meal {
   margin: 2.4rem 0;
 
@@ -187,8 +190,11 @@ s'ils ont un élément ancêtre (parent etc...) qui correspond au premier sélec
 .recipe-btn:hover {
   background: var(--tenne-tawny-dark);
 }
+
+/* ========================================================================== */
 /* meal details */
 /* scroll */
+/* ========================================================================== */
 .meal-details {
   position: fixed;
   top: 50%;
@@ -218,12 +224,18 @@ s'ils ont un élément ancêtre (parent etc...) qui correspond au premier sélec
 
   border: 1px solid green;
 }
+
+/**/
+.showRecipe {
+}
 .meal-details-content {
   margin: 2rem;
 }
 /* FIN DU BLOCK */
 
+/* ========================================================================== */
 /* Media Queries */
+/* ========================================================================== */
 
 /* different disposition affichage card meal
 Configuration tablette mofification de comportement (ajout)*/
@@ -272,8 +284,11 @@ Configuration tablette mofification de comportement (ajout)*/
   }
 }
 
+/* ========================================================================== */
 /*Tests borders
+/* ========================================================================== */
 
+/*
 Section & Article & Item.
 
 <div class="container">  
