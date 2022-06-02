@@ -329,6 +329,31 @@ https://developer.mozilla.org/fr/docs/Web/CSS/::-webkit-scrollbar
 .recipe-link a:hover {
   opacity: 0.8;
 }
+
+.load-more-0 {
+  border: 4px dashed black;
+}
+.load-more-1 {
+  border: 4px solid red;
+}
+.load-more-2 {
+  border: 4px solid blue;
+}
+.load-more-3 {
+  border: 4px solid black;
+}
+.load-more-4 {
+  border: 4px solid green;
+}
+.load-more-5 {
+  border: 4px solid purple;
+}
+.load-more-6 {
+  border: 4px solid turquoise;
+}
+.load-more-6 {
+  border: 4px solid yellowgreen;
+}
 /* FIN DU BLOCK */
 
 /* ========================================================================== */

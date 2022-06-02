@@ -60,24 +60,50 @@ function getMealList(i = 6) {
       console.log(data.meals);
       //declaration de html (string)
       let html = "";
+      let maximumIteration = Math.round(data.meals.length / 6);
 
+      console.log(maximumIteration);
       //Amelioration button load more recuperer les cards
       if (data.meals) {
-        let i = 6; //++6 load more
-        data.meals.slice(0, i).forEach((meal) => {
-          //foreach affiche tout
-          html += `
-                    <div class = "meal-item" data-id = "${meal.idMeal}">
-                        <div class = "meal-img">
-                            <img src = "${meal.strMealThumb}" alt = "food">
+        let start = 0,
+          end = 6; // ++6 xmax-1
+
+        for (let i = 0; i < maximumIteration; i++) {
+          //... start
+          html += `<div class = "load-more-${i}">`;
+          //Recuperer des slides de 6
+          data.meals.slice(start, end).forEach((meal) => {
+            // ou alors faire decoupage de 6 dans des div
+            html += `
+                        <div class = "meal-item" data-id = "${meal.idMeal}">
+                            <div class = "meal-img">
+                                <img src = "${meal.strMealThumb}" alt = "food">
+                            </div>
+                            <div class = "meal-name">
+                                <h3>${meal.strMeal}</h3>
+                                <a href = "#" class = "recipe-btn">Get Recipe</a>
+                            </div>
                         </div>
-                        <div class = "meal-name">
-                            <h3>${meal.strMeal}</h3>
-                            <a href = "#" class = "recipe-btn">Get Recipe</a>
-                        </div>
-                    </div>
-                `;
-        });
+                    `;
+          });
+
+          html += `</div>`;
+          //... end
+
+          //incrementation en fin de script.
+          start += 6;
+          end += 6;
+        }
+
+        //Load More
+        // if (i < maximumIteration) {
+        //   i += 6;
+        //   console.log(i);
+        //   html += `<div>
+        //               <button class="loadMore" onclick="loadMore(${i})">Load More</button>
+        //           </div>`;
+        // }
+
         mealList.classList.remove("notFound");
         //button load more | incrementation posible eb:41/6 arrondi inferieur
         // possibilite de 6 incrementations.  (i= ++6) 12|18|24|30|36|42|
