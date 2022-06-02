@@ -19,21 +19,21 @@
       <section class="meal-wrapper">
         <!-- -->
         <article class="meal-search">
-          <h2 class="title">Find Meals For Your Ingredients</h2>
+          <h2 class="title">Quels menus réaliser avec vos ingrédients?</h2>
           <blockquote>
-            Real food doesnt have ingredients, real food is ingredients.
+            La bonne cuisine est honnête, sincère et simple.
           </blockquote>
-          <cite>Jamie Olivier</cite>
+          <cite>Maité</cite>
         </article>
 
         <!-- =============================================================== -->
-        <!--  -->
+        <!-- Champ de saisies -->
         <!-- =============================================================== -->
         <article class="meal-search-box">
           <input
             type="text"
             class="search-control"
-            placeholder="Enter an ingredient"
+            placeholder="Entrer vos ingrédients... in engish please"
             id="search-input"
           />
           <button type="submit" class="search-btn btn" id="search-btn">
@@ -45,43 +45,49 @@
         <!-- MEAL RELSULT LISTING -->
         <!-- =============================================================== -->
         <section class="meal-result">
-          <h2 class="title">Your Search Result:</h2>
+          <h2 class="title">Vos recettes sont:</h2>
           <!-- NIV1 - Wrapper -->
           <article id="meal">
-            <!-- NIV2 - Item-->
-            <div class="meal-item">
-              <!-- NIV3 - Element -->
-              <div class="meal-img">
-                <img src="images/french_frise.jpg" alt="food" width="700" />
+            <!-- Manipulation DOM here! -->
+            <div class="nodisplay">
+              <!-- NIV2 - Item-->
+              <div class="meal-item">
+                <!-- NIV3 - Element -->
+                <div class="meal-img">
+                  <img src="images/french_frise.jpg" alt="food" width="700" />
+                </div>
+                <div class="meal-name">
+                  <h3>Potato Chips</h3>
+                  <a href="#" class="recipe-btn">Voir la recette</a>
+                </div>
               </div>
-              <div class="meal-name">
-                <h3>Potato Chips</h3>
-                <a href="#" class="recipe-btn">Get Recipe</a>
+              <!-- fin meal item -->
+              <!-- meal item -->
+              <div class="meal-item">
+                <div class="meal-img">
+                  <img src="images/french_frise.jpg" alt="food" width="700" />
+                </div>
+                <div class="meal-name">
+                  <h3>Potato Chips</h3>
+                  <a href="#" class="recipe-btn">Get Recipe</a>
+                </div>
               </div>
+              <!-- fin meal item -->
+              <!-- meal item -->
+              <div class="meal-item">
+                <div class="meal-img">
+                  <img src="images/french_frise.jpg" alt="food" width="700" />
+                </div>
+                <div class="meal-name">
+                  <h3>Potato Chips</h3>
+                  <a href="#" class="recipe-btn">Get Recipe</a>
+                </div>
+              </div>
+              <!-- fin meal item -->
             </div>
-            <!-- fin meal item -->
-            <!-- meal item -->
-            <div class="meal-item">
-              <div class="meal-img">
-                <img src="images/french_frise.jpg" alt="food" width="700" />
-              </div>
-              <div class="meal-name">
-                <h3>Potato Chips</h3>
-                <a href="#" class="recipe-btn">Get Recipe</a>
-              </div>
+            <div>
+              <button class="loadMore" onclick="loadMore()">Load More</button>
             </div>
-            <!-- fin meal item -->
-            <!-- meal item -->
-            <div class="meal-item">
-              <div class="meal-img">
-                <img src="images/french_frise.jpg" alt="food" width="700" />
-              </div>
-              <div class="meal-name">
-                <h3>Potato Chips</h3>
-                <a href="#" class="recipe-btn">Get Recipe</a>
-              </div>
-            </div>
-            <!-- fin meal item -->
           </article>
         </section>
         <!-- Fin affichage des cards -->
