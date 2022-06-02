@@ -6,7 +6,7 @@
   padding: 0;
 }
 
-/**/
+/* var() values */
 :root {
   --tenne-tawny: #d65108;
   --tenne-tawny-dark: #b54507;
@@ -132,17 +132,13 @@ s'ils ont un élément ancêtre (parent etc...) qui correspond au premier sélec
   margin-top: 4rem;
   border: 3px dashed solid blue;
 }
-
-/* ========================================================================== */
-/* DEBUT DU BLOCK */
 /* NIV1 - Wrapper */
-/* ========================================================================== */
 #meal {
   margin: 2.4rem 0;
 
   border: 3px solid black;
 }
-/* NIV2 - Item | Card Attention nest pas applique.*/
+/* NIV2 - Item */
 .meal-item {
   border-radius: 1rem;
   -webkit-border-radius: 1rem;
@@ -192,8 +188,7 @@ s'ils ont un élément ancêtre (parent etc...) qui correspond au premier sélec
 }
 
 /* ========================================================================== */
-/* meal details */
-/* scroll */
+/* MEAL DETAILS | Display none */
 /* ========================================================================== */
 .meal-details {
   position: fixed;
@@ -225,11 +220,104 @@ s'ils ont un élément ancêtre (parent etc...) qui correspond au premier sélec
   border: 1px solid green;
 }
 
-/**/
-.showRecipe {
+/* Scrollbar 
+Le pseudo-élément 
+::-webkit-scrollbar permet de modifier le style de la barre de défilement associée à un élément.
+::-webkit-scrollbar-thumb — l'emplacement qui permet de déplacer la barre de défilement.
+https://developer.mozilla.org/fr/docs/Web/CSS/::-webkit-scrollbar
+*/
+.meal-details::-webkit-scrollbar {
+  width: 10px;
 }
+.meal-details::-webkit-scrollbar-thumb {
+  background: #f0f0f0;
+  border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+}
+/* js related */
+.showRecipe {
+  display: block;
+}
+.recipe-close-btn {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  font-size: 1.8rem;
+  background: #fff;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+}
+/* NIV1 - Wrapper */
 .meal-details-content {
   margin: 2rem;
+}
+.meal-details-content p:not(.recipe-category) {
+  padding: 1rem 0;
+}
+
+.recipe-title {
+  letter-spacing: 1px;
+  padding-bottom: 1rem;
+}
+.recipe-category {
+  background: #fff;
+  font-weight: 600;
+  color: var(--tenne-tawny);
+
+  display: inline-block;
+  /*display: inline-block, the top and bottom margins/paddings are respected, 
+  but with display: inline they are not.*/
+  padding: 0.2rem 0.5rem;
+
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+}
+.recipe-instruct {
+  padding: 1rem 0;
+  border: 1px solid blue;
+}
+.recipe-meal-img img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  margin: 0 auto;
+  display: block;
+}
+.recipe-link {
+  margin: 1.4rem 0;
+}
+.recipe-link a {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  transition: all 0.4s linear;
+  -webkit-transition: all 0.4s linear;
+  -moz-transition: all 0.4s linear;
+  -ms-transition: all 0.4s linear;
+  -o-transition: all 0.4s linear;
+}
+.recipe-link a:hover {
+  opacity: 0.8;
 }
 /* FIN DU BLOCK */
 
@@ -237,7 +325,9 @@ s'ils ont un élément ancêtre (parent etc...) qui correspond au premier sélec
 /* Media Queries */
 /* ========================================================================== */
 
-/* different disposition affichage card meal
+/* 
+NOMBRE DE COLLONES D AFFICHAGE.
+different disposition affichage card meal
 Configuration tablette mofification de comportement (ajout)*/
 /* min-width = taille minimum width a partir
   la requête permet d'appliquer des styles à condition que la largeur de la zone 
@@ -283,6 +373,17 @@ Configuration tablette mofification de comportement (ajout)*/
     border: 4px solid magenta;
   }
 }
+
+
+/* ========================================================================== */
+/* STYLING */
+/* ========================================================================== */
+
+
+
+
+
+
 
 /* ========================================================================== */
 /*Tests borders
