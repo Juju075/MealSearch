@@ -68,12 +68,10 @@ function getMealList(i = 6) {
         let start = 0,
           end = 6; // ++6 xmax-1
 
-        for (let i = 0; i < maximumIteration; i++) {
+        for (i = 0; i < maximumIteration; i++) {
           //... start
           html += `<div class = "load-more-${i}">`;
-          //Recuperer des slides de 6
           data.meals.slice(start, end).forEach((meal) => {
-            // ou alors faire decoupage de 6 dans des div
             html += `
                         <div class = "meal-item" data-id = "${meal.idMeal}">
                             <div class = "meal-img">
@@ -88,6 +86,19 @@ function getMealList(i = 6) {
           });
 
           html += `</div>`;
+
+          if (i !== 0) {
+          }
+
+          // ajouter style css pour ce bloc
+          // si i !0 display: none;
+
+          /**
+           * Dynamic style
+           * Adding and Removing Rules
+           * https://www.w3.org/wiki/Dynamic_style_-_manipulating_CSS_with_JavaScript
+           */
+
           //... end
 
           //incrementation en fin de script.
@@ -95,14 +106,16 @@ function getMealList(i = 6) {
           end += 6;
         }
 
-        //Load More
-        // if (i < maximumIteration) {
-        //   i += 6;
-        //   console.log(i);
-        //   html += `<div>
-        //               <button class="loadMore" onclick="loadMore(${i})">Load More</button>
-        //           </div>`;
-        // }
+        //Load More block deja affiche load-morei
+        console.log(i);
+        //recuperer le dernier l
+        if (4 < maximumIteration) {
+          i += 6;
+          console.log(i);
+          html += `<div>
+                      <button id="loadMore")">Load More</button>
+                  </div>`;
+        }
 
         mealList.classList.remove("notFound");
         //button load more | incrementation posible eb:41/6 arrondi inferieur
@@ -120,6 +133,18 @@ function getMealList(i = 6) {
       }
       //Injection du html (6,12,18,...)
       mealList.innerHTML = html;
-      // Ajoute un bouton load more en fin de list (mealLoadMore button load more
+      loadMoreBtn = document.getElementById("loadMore");
+      console.log(loadMoreBtn);
+      //https://www.pierre-giraud.com/afficher-cacher-div-javascript/
+      loadMoreBtn.addEventListener("click", () => {
+        console.log("rien");
+      });
     });
+}
+
+function loadMoreHidden(i) {
+  //tout html inserer css load-more a display none sauf 0
+  //inserer de facon dynamique du css  Dynamic style
+  //Afficher ou cacher un div, un texte, ou n’importe quel élément HTML en CSS (display:none)
+  // recuperer
 }
